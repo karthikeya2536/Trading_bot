@@ -1,79 +1,114 @@
-Simplified Binance Futures Trading Bot
-This is a command-line trading bot written in Python for interacting with the Binance Futures Testnet. It allows users to place Market, Limit, and Stop-Limit orders securely and provides detailed logging for all actions.
+A **command-line trading bot** written in Python for interacting with the **Binance Futures Testnet**.  
+It allows users to place **Market**, **Limit**, and **Stop-Limit** orders securely and provides detailed logging for all actions.
 
-Features
-Multiple Order Types: Place Market, Limit, and Stop-Limit orders.
+---
 
-Interactive CLI: A user-friendly command-line interface for easy operation.
+## ✨ Features
 
-Input Validation: Ensures that user inputs like symbol, side, and quantity are valid before sending them to the API.
+- **Multiple Order Types** – Place **Market**, **Limit**, and **Stop-Limit** orders.
+- **Interactive CLI** – User-friendly command-line interface for easy operation.
+- **Input Validation** – Ensures that user inputs (symbol, side, quantity, etc.) are valid before sending them to the API.
+- **Robust Error Handling** – Catches and clearly displays API and order-related errors from Binance.
+- **Comprehensive Logging** – Logs all major events (API requests, responses, and errors) to a `trading_bot.log` file.
+- **Secure** – Uses environment variables or direct input for API keys for local use.
 
-Robust Error Handling: Catches and clearly displays API and order-related errors from Binance.
+---
 
-Comprehensive Logging: Logs all major events, including API requests, responses, and errors, to a trading_bot.log file for easy debugging and record-keeping.
+## 🛠 Requirements
 
-Secure: Uses environment variables or direct input for API keys (for local use).
+- Python **3.6+**
+- [`python-binance`](https://pypi.org/project/python-binance/) library
 
-Requirements
-Python 3.6+
+---
 
-python-binance library
+## 📥 Setup & Installation
 
-Setup & Installation
-Clone the repository or download the script:
+1. **Clone the repository** or download the script:
+    ```
+    git clone <your-repo-url>
+    cd <your-repo-directory>
+    ```
 
-git clone <your-repo-url>
-cd <your-repo-directory>
+2. **Install dependencies**:
+    ```
+    pip install python-binance
+    ```
 
-Install the required Python library:
+3. **Get your Binance Testnet API keys**:
+    - Register for an account on the [Binance Futures Testnet](https://testnet.binancefuture.com/).
+    - Generate your **API Key** and **Secret Key**.
+    - **Important:** Enable Futures trading permissions for the key.
 
-pip install python-binance
+---
 
-Get your Binance Testnet API Keys:
+## ▶ How to Run
 
-Register for an account on the Binance Futures Testnet.
+1. Navigate to the bot's directory:
+    ```
+    cd <your-repo-directory>
+    ```
 
-Generate an API Key and Secret Key.
+2. Run the bot:
+    ```
+    python trading_bot.py
+    ```
 
-Important: Make sure to enable trading permissions for the key.
+3. Enter your **API credentials** when prompted:
+    - For better security, set them as environment variables:
+      ```
+      export BINANCE_API_KEY="your_api_key"
+      export BINANCE_API_SECRET="your_api_secret"
+      ```
 
-How to Run
-Navigate to the script's directory in your terminal.
+---
 
-Run the script:
+## 📚 Usage
 
-python trading_bot.py
-
-Enter your credentials:
-
-The script will prompt you to enter your Binance Testnet API Key and Secret Key.
-
-(For better security, you can set these as environment variables named BINANCE_API_KEY and BINANCE_API_SECRET to avoid entering them each time.)
-
-Usage
-Once the bot is running, you will see the main menu:
+Once the bot is running, you'll see:
 
 --- Main Menu ---
-1. Place Market Order
-2. Place Limit Order
-3. Place Stop-Limit Order (Bonus)
-4. Exit
 
-Select an option by typing the corresponding number and pressing Enter.
+Place Market Order
 
-Follow the prompts to enter the order details (e.g., Symbol BTCUSDT, Side buy, Quantity 0.01).
+Place Limit Order
 
-The bot will confirm if the order was placed successfully or display an error message if it failed.
+Place Stop-Limit Order (Bonus)
 
-Getting Testnet Funds
-If you receive a Margin is insufficient error, it means your testnet account has no funds.
+Exit
 
-Go to the Binance Futures Testnet site.
+text
 
-Find and click the "Faucet" to add free testnet assets (USDT, BTC, etc.) to your account.
+- Select an option by entering its number.
+- Follow prompts to enter **Symbol** (`BTCUSDT`), **Side** (`buy`), **Quantity** (`0.01`), etc.
+- The bot will confirm the order placement or display an error.
 
-Logging
-All transactions, successful or not, are logged with a timestamp in the trading_bot.log file. This is useful for tracking activity and debugging issues.
+---
 
-Disclaimer
-This bot is for educational and demonstration purposes only. It is configured to run on the Binance Testnet and does not use real money. Trading cryptocurrencies involves significant risk.
+## 💰 Getting Testnet Funds
+
+If you get:
+Margin is insufficient
+
+text
+It means your account balance is 0.
+
+- Log into the [Binance Futures Testnet](https://testnet.binancefuture.com/)
+- Click **Faucet** in the UI  
+- Request free testnet assets (e.g., USDT, BTC)
+
+---
+
+## 📝 Logging
+
+- All transactions (successful or failed) are logged with timestamps in **`trading_bot.log`**.
+- Useful for **tracking activity** and **debugging**.
+
+---
+
+## ⚠ Disclaimer
+
+**This bot is for educational and demonstration purposes only.**  
+It operates only on the **Binance Futures Testnet** and does **not use real money**.  
+Trading cryptocurrencies carries significant risk — use responsibly.
+
+---
